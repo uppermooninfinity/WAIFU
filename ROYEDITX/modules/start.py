@@ -59,9 +59,9 @@ async def start(update: Update, context: CallbackContext) -> None:
 ***● ɪ ᴀᴍ 『ɴʏᴋᴀᴀ』x³『ᴀɴɪᴍᴇ』♡゙ ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴘᴇᴄɪᴀʟ ғᴇᴀᴛᴜʀᴇs.\n\n● ᴀɴɪᴍᴇ ᴠᴇʀsɪᴏɴ ➥ M33.6/V16 \n● ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➥ 3.11.9 \n\n❖ ᴛʜɪs ɪs ᴍᴏsᴛ ᴘᴏᴡᴇʀғᴜʟʟ ᴀɴɪᴍᴇ ᴄʜᴀʀᴀᴄᴛᴇʀ ᴄᴏʟʟᴇᴄᴛ ʜᴀʀᴇᴍ ʙᴏᴛ.***
                """
         keyboard = [
-            [InlineKeyboardButton("ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f'http://t.me/avishaxbot?startgroup=new')],
-            [InlineKeyboardButton("ᴏᴡɴᴇʀ", url=f'https://t.me/HLO_PAPA'),
-             InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f'https://t.me/the_friendz')],
+            [InlineKeyboardButton("ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f'http://t.me/nykaa_waifubot?startgroup=new')],
+            [InlineKeyboardButton("ᴏᴡɴᴇʀ", url=f'https://t.me/scriptyxx'),
+             InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f'https://t.me/theinfinity_support')],
             [InlineKeyboardButton("ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs", callback_data='help')],
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
