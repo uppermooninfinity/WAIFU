@@ -20,7 +20,7 @@ LOGGER = logging.getLogger(__name__)
 OWNER_ID = os.getenv("OWNER_ID", "8364692780")
 
 ### ❖ ➥
-SUDO_USERS = os.getenv("SUDO_USERS", "8558024747").split()
+SUDO_USERS = os.getenv("SUDO_USERS", "8558024747, 8569102770, 8285730532, 8364692780").split()
 
 ### ❖ ➥
 LOGGER_ID = os.getenv("LOGGER_ID", "-1003882647583")
