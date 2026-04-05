@@ -39,8 +39,13 @@ async def upload(update: Update, context: CallbackContext) -> None:
         character_name = args[1].replace('-', ' ').title()
         anime = args[2].replace('-', ' ').title()
 
+        # ✅ FIXED BLOCK (User-Agent added)
         try:
-            urllib.request.urlopen(args[0])
+            req = urllib.request.Request(
+                args[0],
+                headers={'User-Agent': 'Mozilla/5.0'}
+            )
+            urllib.request.urlopen(req)
         except:
             await update.message.reply_text('❖ ɪɴᴠᴀʟɪᴅ ᴜʀʟ...')
             return
@@ -111,19 +116,16 @@ async def update(update: Update, context: CallbackContext) -> None:
             await update.message.reply_text('❖ ɪɴᴄᴏʀʀᴇᴄᴛ ғᴏʀᴍᴀᴛᴇ, ᴘʟᴇᴀsᴇ ᴜsᴇ ➥ /update ɪɴ ғɪᴇʟᴅ new_value')
             return
 
-        # Get character by ID
         character = await collection.find_one({'id': args[0]})
         if not character:
             await update.message.reply_text('❖ ᴄʜᴀʀᴀᴄᴛᴇʀ ɴᴏᴛ ғᴏᴜɴᴅ...')
             return
 
-        # Check if field is valid
         valid_fields = ['img_url', 'name', 'anime', 'rarity']
         if args[1] not in valid_fields:
             await update.message.reply_text(f'❖ ɪɴᴠᴀɪʟᴅ ғᴏʀᴍᴀᴛᴇ, ᴘʟᴇᴀsᴇ ᴜsᴇ ᴏɴᴇ ᴏғ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ ➥ {", ".join(valid_fields)}')
             return
 
-        # Update field
         if args[1] in ['name', 'anime']:
             new_value = args[2].replace('-', ' ').title()
         elif args[1] == 'rarity':
@@ -138,7 +140,6 @@ async def update(update: Update, context: CallbackContext) -> None:
 
         await collection.find_one_and_update({'id': args[0]}, {'$set': {args[1]: new_value}})
 
-        
         if args[1] == 'img_url':
             await context.bot.delete_message(chat_id=CHANNEL_ID, message_id=character['message_id'])
             message = await context.bot.send_photo(
@@ -150,7 +151,6 @@ async def update(update: Update, context: CallbackContext) -> None:
             character['message_id'] = message.message_id
             await collection.find_one_and_update({'id': args[0]}, {'$set': {'message_id': message.message_id}})
         else:
-            
             await context.bot.edit_message_caption(
                 chat_id=CHANNEL_ID,
                 message_id=character['message_id'],
