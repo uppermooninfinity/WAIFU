@@ -12,6 +12,7 @@ import random
 from ROYEDITX import application, collection, db, CHANNEL_ID
 
 SUDO_USERS = list(map(int, os.getenv("SUDO_USERS", "8558024747,8569102770").split(",")))
+OWNER_ID = os.getenv("OWNER_ID", "8364692780")
 
 async def get_next_sequence_number(sequence_name):
     sequence_collection = db.sequences
