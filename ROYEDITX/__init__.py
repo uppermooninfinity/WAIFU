@@ -17,40 +17,40 @@ logging.getLogger("pyrate_limiter").setLevel(logging.ERROR)
 LOGGER = logging.getLogger(__name__)
 
 ### ❖ ➥
-OWNER_ID = os.getenv("OWNER_ID", None)
+OWNER_ID = os.getenv("OWNER_ID", "8364692780")
 
 ### ❖ ➥
-SUDO_USERS = os.getenv("SUDO_USERS", None).split()
+SUDO_USERS = os.getenv("SUDO_USERS", "8558024747").split()
 
 ### ❖ ➥
-LOGGER_ID = os.getenv("LOGGER_ID", None)
+LOGGER_ID = os.getenv("LOGGER_ID", "-1003882647583")
 
 ### ❖ ➥
-BOT_USERNAME = os.getenv("BOT_USERNAME", None)
+BOT_USERNAME = os.getenv("BOT_USERNAME", "nykaa_waifubot")
 
 ### ❖ ➥
-BOT_TOKEN = os.getenv("BOT_TOKEN", None)
+BOT_TOKEN = os.getenv("BOT_TOKEN", "")
 
 ### ❖ ➥
-MONGO_URL = os.getenv("MONGO_URL", None)
+MONGO_URL = os.getenv("MONGO_URL", "mongodb+srv://knight4563:knight4563@cluster0.a5br0se.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 ### ❖ ➥
-IMG_URL = os.getenv("IMG_URL", None).split()
+IMG_URL = os.getenv("IMG_URL", "https://files.catbox.moe/376q7n.jpg").split()
 
 ### ❖ ➥
-SUPPORT_CHAT = os.getenv("SUPPORT_CHAT", None)
+SUPPORT_CHAT = os.getenv("SUPPORT_CHAT", "https://t.me/theinfinity_support")
 
 ### ❖ ➥
-CHANNEL_ID = os.getenv("CHANNEL_ID", None)
+CHANNEL_ID = os.getenv("CHANNEL_ID", "-1003729074782")
 
 ### ❖ ➥
-API_HASH = os.getenv("API_HASH", None)
+API_HASH = os.getenv("API_HASH", "39679517")
 
 ### ❖ ➥
-API_ID = os.getenv("API_ID", None)
+API_ID = os.getenv("API_ID", "aed61e5ff8c711895f8b0c99e51c16cc")
 
 ### ❖ ➥
-UPDATE_CHAT = os.getenv("UPDATE_CHAT", None)
+UPDATE_CHAT = os.getenv("UPDATE_CHAT", "")
 
 application = Application.builder().token(BOT_TOKEN).build()
 ROY = Client(
