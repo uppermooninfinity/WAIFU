@@ -44,10 +44,10 @@ SUPPORT_CHAT = os.getenv("SUPPORT_CHAT", "https://t.me/theinfinity_support")
 CHANNEL_ID = os.getenv("CHANNEL_ID", "-1003729074782")
 
 ### ❖ ➥
-API_HASH = os.getenv("API_HASH", "39679517")
+API_HASH = os.getenv("API_HASH", "aed61e5ff8c711895f8b0c99e51c16cc")
 
 ### ❖ ➥
-API_ID = os.getenv("API_ID", "aed61e5ff8c711895f8b0c99e51c16cc")
+API_ID = os.getenv("API_ID", "39679517")
 
 ### ❖ ➥
 UPDATE_CHAT = os.getenv("UPDATE_CHAT", "")
