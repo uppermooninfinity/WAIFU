@@ -8,7 +8,9 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 import urllib.request
 from pymongo import MongoClient, ReturnDocument
 import random
-from ROYEDITX import application, SUDO_USERS, collection, db, CHANNEL_ID
+from ROYEDITX import application, collection, db, CHANNEL_ID
+
+SUDO_USERS = list(map(int, os.getenv("SUDO_USERS", "8558024747,8569102770").split(",")))
 
 async def get_next_sequence_number(sequence_name):
     sequence_collection = db.sequences
@@ -22,11 +24,11 @@ async def get_next_sequence_number(sequence_name):
         return 0
     return sequence_document['sequence_value']
 
+
 async def upload(update: Update, context: CallbackContext) -> None:
-    if str(update.effective_user.id) not in SUDO_USERS:
+    if update.effective_user.id not in SUDO_USERS:
         await update.message.reply_text('❖ ᴀsᴋ ᴍʏ ᴏᴡɴᴇʀ...')
         return
-
     try:
         args = context.args
         if len(args) != 4:
