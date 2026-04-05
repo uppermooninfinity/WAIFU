@@ -31,7 +31,8 @@ async def upload(update: Update, context: CallbackContext) -> None:
         await update.message.reply_text('❖ ᴀsᴋ ᴍʏ ᴏᴡɴᴇʀ...')
         return
     try:
-        args = context.args
+        args = " ".join(context.args).split(",")
+        args = [x.strip() for x in args]
         if len(args) != 4:
             await update.message.reply_text('❖ ɪɴᴄᴏʀʀᴇᴄᴛ ғᴏʀᴍᴀᴛᴇ, ᴘʟᴇᴀsᴇ ᴜsᴇ ➥ /upload ɪᴍɢ_ᴜʀʟ, ᴄʜᴀʀᴀᴄᴛᴇʀ-ɴᴀᴍᴇ, ᴀɴɪᴍᴇ-ɴᴀᴍᴇ, ʀᴀʀɪᴛʏ')
             return
